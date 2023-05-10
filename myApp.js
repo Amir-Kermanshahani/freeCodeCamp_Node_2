@@ -21,6 +21,7 @@ app.get('/json', function (req, res ) {
     } else {
     message.message= message.message.toLowerCase() ;
     }
+    res.json(message);
   });
 
  module.exports = app;
