@@ -15,13 +15,14 @@ app.get('/json', function (req, res) {
 */
 
 app.get('/json', function (req, res ) {
-    let message = {"message" : "hello json"};
-    if (process.env.MESSAGE_STYLE == "uppercase"){
-     message.message= message.message.toUpperCase() ;
-    } else {
-    message.message= message.message.toLowerCase() ;
+    var message ={"message": "Hello json"};
+    if (process.env.MESSAGE_STYLE == "uppercase") {
+        message.message= message.message.toUpperCase();
     }
-    res.json(message);
-  });
+    else {
+        message.message= message.message.toLowerCase();
+    }
+    res.json(message)
+});
 
- module.exports = app;
+module.exports = app;
