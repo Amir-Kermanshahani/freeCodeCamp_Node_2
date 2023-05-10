@@ -17,6 +17,7 @@ app.get('/json', function(req, res) {
       } else {
         response = "Hello json";
       }
+    res.json({"message" : response})
 });
 
 
