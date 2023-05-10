@@ -16,7 +16,7 @@ app.get('/json', function(req, res) {
     mySecret === 'uppercase' ? 
         res.json({ "message": message.toUpperCase() }):
         res.json({ "message": message })
-})
+});
 
 
 
