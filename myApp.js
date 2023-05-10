@@ -1,5 +1,6 @@
 
 require('fcc-express-bground');
+require('dotenv')
 var express = require('express');
 var app = express();
 
@@ -11,12 +12,14 @@ app.use("/public", express.static( __dirname + "/public"));
 
 
 app.get('/json', function (req, res) {
-    if (process.env.MESSAGE_STYLE == "uppercase") {
-        res.json({"message": "Hello json".toUpperCase()});
+
+    let response = {"message": "Hello json"};
+
+    if(process.env.MESSAGE_STYLE === "uppercase") {
+        response.message = response.message.toUpperCase();
     }
-    else {
-        res.json({"message": "Hello json"});
-    }
+
+    res.json(response);
     
 })
 
