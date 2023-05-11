@@ -10,9 +10,12 @@ app.get("/",(req,res)=>res.sendFile(`${__dirname}/views/index.html`));
 app.use("/public", express.static(__dirname+"/public"));
 
  app.get("/json",(req,res)=>{
-   let resultMessage="Hello json";
+   var resultMessage=null;
    if (process.env.MESSAGE_STYLE==="uppercase"){
-     resultMessage=resultMessage.toUpperCase();
+        resultMessage="Hello json".toUpperCase();
+   }
+   else {
+        resultMessage="Hello json";
    }
   
    res.json({"message": resultMessage});
