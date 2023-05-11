@@ -18,7 +18,7 @@ app.use("/public", express.static(__dirname+"/public"));
         resultMessage="Hello json";
    }
   
-   res.json({"message": resultMessage});
+   res.json({message: resultMessage});
                             
  });
 
